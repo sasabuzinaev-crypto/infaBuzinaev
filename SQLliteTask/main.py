@@ -15,7 +15,7 @@ employees_data = [
     (5, "Васильева", "Ольга", 4)
 ]
 
-db = DatabaseNode("company.db")
+db = DatabaseNode("SQLliteTask/Nodes/company.db")
 
 db.insert_job_titles(job_titles_data)
 db.insert_employees(employees_data)

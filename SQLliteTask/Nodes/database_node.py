@@ -22,6 +22,19 @@ CREATE TABLE IF NOT EXISTS `employees` (
 
                     );
 """)
+    def insert_job_titles(self, data):
+        self.cursor.executemany(
+            "INSERT OR IGNORE INTO job_titles (id_job_title, name) VALUES (?, ?)",
+            data
+        )
+        self.connection.commit()
+
+    def insert_employees(self, data):
+        self.cursor.executemany(
+            "INSERT OR IGNORE INTO employees (id, surname, name, id_job_title) VALUES (?, ?, ?, ?)",
+            data
+        )
+        self.connection.commit()
         self.connection.commit()
     def close(self):
         self.connection.close()
